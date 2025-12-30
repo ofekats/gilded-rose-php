@@ -12,10 +12,10 @@ class ConjuredItemTest extends TestCase
 {
     public function testQualityDecreasesBy2EachDay(): void
     {
-        $items = [new Item('Conjured', 10, 2)];
+        $items = [new Item('Conjured', 10, 4)];
         $gildedRose = new GildedRose($items);
         $gildedRose->updateQuality();
-        $this->assertSame(0, $items[0]->quality);
+        $this->assertSame(2, $items[0]->quality);
     }
 
     public function testQualityNeverBelow0(): void
