@@ -8,7 +8,7 @@ use GildedRose\GildedRose;
 use GildedRose\Item;
 use PHPUnit\Framework\TestCase;
 
-class GildedRoseTest extends TestCase
+class NormalItemsTest extends TestCase
 {
     public function testQualityDecreasesBy1(): void
     {
