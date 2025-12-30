@@ -14,7 +14,7 @@ class ConjuredItemTest extends TestCase
     {
         $items = [new Item('Conjured', 10, 4)];
         $gildedRose = new GildedRose($items);
-        $gildedRose->updateQuality();
+        $gildedRose->updateQualityAndSellIn();
         $this->assertSame(2, $items[0]->quality);
     }
 
@@ -22,7 +22,7 @@ class ConjuredItemTest extends TestCase
     {
         $items = [new Item('Conjured', 10, 0)];
         $gildedRose = new GildedRose($items);
-        $gildedRose->updateQuality();
+        $gildedRose->updateQualityAndSellIn();
         $this->assertSame(0, $items[0]->quality);
     }
 
@@ -30,7 +30,7 @@ class ConjuredItemTest extends TestCase
     {
         $items = [new Item('Conjured', 0, 5)];
         $gildedRose = new GildedRose($items);
-        $gildedRose->updateQuality();
+        $gildedRose->updateQualityAndSellIn();
         $this->assertSame(1, $items[0]->quality);
     }
 
@@ -38,7 +38,7 @@ class ConjuredItemTest extends TestCase
     {
         $items = [new Item('Conjured', 10, 7)];
         $gildedRose = new GildedRose($items);
-        $gildedRose->updateQuality();
+        $gildedRose->updateQualityAndSellIn();
         $this->assertSame(9, $items[0]->sellIn);
     }
 

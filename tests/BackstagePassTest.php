@@ -14,7 +14,7 @@ class BackstagePassTest extends TestCase
     {
         $items = [new Item('Backstage passes to a TAFKAL80ETC concert', 20, 30)];
         $gildedRose = new GildedRose($items);
-        $gildedRose->updateQuality();
+        $gildedRose->updateQualityAndSellIn();
         $this->assertSame(31, $items[0]->quality);
     }
 
@@ -22,7 +22,7 @@ class BackstagePassTest extends TestCase
     {
         $items = [new Item('Backstage passes to a TAFKAL80ETC concert', 10, 30)];
         $gildedRose = new GildedRose($items);
-        $gildedRose->updateQuality();
+        $gildedRose->updateQualityAndSellIn();
         $this->assertSame(32, $items[0]->quality);
     }
 
@@ -30,7 +30,7 @@ class BackstagePassTest extends TestCase
     {
         $items = [new Item('Backstage passes to a TAFKAL80ETC concert', 5, 30)];
         $gildedRose = new GildedRose($items);
-        $gildedRose->updateQuality();
+        $gildedRose->updateQualityAndSellIn();
         $this->assertSame(33, $items[0]->quality);
     }
 
@@ -38,7 +38,7 @@ class BackstagePassTest extends TestCase
     {
         $items = [new Item('Backstage passes to a TAFKAL80ETC concert', 0, 30)];
         $gildedRose = new GildedRose($items);
-        $gildedRose->updateQuality();
+        $gildedRose->updateQualityAndSellIn();
         $this->assertSame(0, $items[0]->quality);
     }
 
@@ -46,7 +46,7 @@ class BackstagePassTest extends TestCase
     {
         $items = [new Item('Backstage passes to a TAFKAL80ETC concert', 5, 50)];
         $gildedRose = new GildedRose($items);
-        $gildedRose->updateQuality();
+        $gildedRose->updateQualityAndSellIn();
         $this->assertSame(50, $items[0]->quality);
     }
 

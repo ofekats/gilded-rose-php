@@ -14,7 +14,7 @@ class SulfurasTest extends TestCase
     {
         $items = [new Item('Sulfuras, Hand of Ragnaros', 0, 80)];
         $gildedRose = new GildedRose($items);
-        $gildedRose->updateQuality();
+        $gildedRose->updateQualityAndSellIn();
         $this->assertSame(80, $items[0]->quality);
     }
 
@@ -22,7 +22,7 @@ class SulfurasTest extends TestCase
     {
         $items = [new Item('Sulfuras, Hand of Ragnaros', 0, 80)];
         $gildedRose = new GildedRose($items);
-        $gildedRose->updateQuality();
+        $gildedRose->updateQualityAndSellIn();
         $this->assertSame(0, $items[0]->sellIn);
     }
     
