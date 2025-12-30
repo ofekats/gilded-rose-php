@@ -83,6 +83,8 @@ final class GildedRose
                 $this->updateBackstagePass($item);
             } elseif ($item->name === 'Sulfuras, Hand of Ragnaros') {
                 continue; //Sulfuras doesn't changed
+            } elseif ($item->name === 'Conjured') {
+                $this->updateConjuredItem($item);
             } else {
                 $this->updateNormalItem($item);
             }
