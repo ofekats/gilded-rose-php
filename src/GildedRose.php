@@ -14,6 +14,20 @@ final class GildedRose
     ) {
     }
 
+    private function updateNormalItem(Item $item): void
+    {
+        if ($item->quality > 0) {
+            $item->quality--;
+        }
+
+        $item->sellIn--;
+
+        if ($item->sellIn < 0 && $item->quality > 0) {
+            $item->quality--;
+        }
+    }
+
+
     public function updateQuality(): void
     {
         foreach ($this->items as $item) {
