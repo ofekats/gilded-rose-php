@@ -59,6 +59,21 @@ final class GildedRose
         }
     }
 
+    private function updateConjuredItem(Item $item): void
+    {
+        $decrease = 2;
+
+        if ($item->quality > 0) {
+            $item->quality = max(0, $item->quality - $decrease);
+        }
+
+        $item->sellIn--;
+
+        if ($item->sellIn < 0 && $item->quality > 0) {
+            $item->quality = max(0, $item->quality - $decrease);
+        }
+    }
+
     public function updateQuality(): void
     {
         foreach ($this->items as $item) {
